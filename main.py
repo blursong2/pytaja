@@ -177,3 +177,4 @@ def home():
             print(iV,"(이)는 올바른 명령이 아닙니다.")
             inputValue()
     inputValue()
+home()
