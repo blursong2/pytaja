@@ -8,12 +8,12 @@ from sys import platform
 import statistics
 os.getcwd()
 
-def clearThing():
+def clear():
     if platform == "linux" and "macos":
         os.system("clear")
     elif platform == "win32":
         os.system("cls")
-clearThing()
+clear()
 
 def d1(filePath):
     with open(filePath,'r',encoding="UTF-8") as f:
@@ -46,7 +46,7 @@ def bubue(wordList):
         spedup.append(speed)
         corct.append(c)
         wronG.append(e)
-        clearThing()
+        clear()
 
         spg = statistics.mean(spedup)
         cpg = statistics.mean(corct)
@@ -59,7 +59,7 @@ def bubue(wordList):
     print("\033[34m\n- - ~\033[36m ~ = =\033[0m 결 과\033[36m = = ~\033[34m ~ - -\n\033[0m"+f"\033[30m\033[47m평균 타수: \033[31m{spg:.1f}\033[0m \n\033[30m\033[47m평균 정확도: \033[31m{cpg:.1f}\033[0m %\n\033[30m\033[47m평균 오타율: \033[31m{wpg:.1f}\033[0m %\n")
 
 def core(filePath):
-    clearThing()
+    clear()
     ##기본자리
     wordList = d1(filePath)
     random.shuffle(wordList)
@@ -76,7 +76,7 @@ def core(filePath):
     ask()
 
 def coreNonRandom(filePath):
-    clearThing()
+    clear()
     wordList = d1(filePath)
     bubue(wordList)
     def ask():
@@ -91,7 +91,7 @@ def coreNonRandom(filePath):
     ask()
 
 def novelpractice():
-    clearThing()
+    clear()
     ##장문연습
     print("\033[34m\n- - ~\033[36m ~ = =\033[0m 장 문 연 습\033[36m = = ~\033[34m ~ - -\n\033[0m")
     d = input("\033[36m선택하세요\033[0m\n1. 별 헤는 밤 - 윤동주\n2. 학점 헤는 밤 - 고양아짖어봐(todayhumor.co.kr)\n3. 애국가\n4. 서시 - 윤동주\nexit. 나가기\n\n~ $ ")
@@ -150,14 +150,8 @@ def home():
             inputValue()
         elif iV == "menu":
             home()
-        elif iV == "neofetch":
-            neofetch()
-            inputValue()
-        elif iV == "fastfetch":
-            neofetch()
-            inputValue()
         elif iV == "clear":
-            clearThing()
+            clear()
             inputValue()
         elif iV == "1":
             core('data/gibonjari.txt')
