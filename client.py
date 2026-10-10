@@ -9,12 +9,6 @@ import statistics
 from getkey import getkey, keys
 os.getcwd()
 
-def neofetch():
-    if platform == "linux" and "macos" and "win32":
-        print("fastfetch명령은 환경에 따라 작동을 할수도, 안할 수도 있습니다.\n\n\033[1mGNU/Linux:\033[0m\ndpkg : apt-get install fastfetch\narch : pacman -Sy fastfetch\nopensuse : zypper install fastfetch\n\n\033[1mWindows환경:\033[0m\nscoop : scoop install fastfetch\nwinget : winget install fastfetch -s winget\n\n\033[1mMACOSX:\033[0m\nbrew : brew install fastfetch")
-        os.system("fastfetch")
-        print("멋진 하드웨어를 장착하고 계시는군요?")
-
 def clearThing():
     if platform == "linux" and "macos":
         os.system("clear")
