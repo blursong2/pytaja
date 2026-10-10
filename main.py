@@ -6,7 +6,6 @@ import os
 import hgtk
 from sys import platform
 import statistics
-from getkey import getkey, keys
 os.getcwd()
 
 def clearThing():
@@ -178,24 +177,3 @@ def home():
             print(iV,"(이)는 올바른 명령이 아닙니다.")
             inputValue()
     inputValue()
-
-def alert():
-    clearThing()
-    print("\033[34m\n- - ~\033[36m ~ = =\033[0m 주 의 사 항  1\033[36m = = ~\033[34m ~ - -\n\033[0m\033[1m\n\"git clone https://github.com/usercruser/pytaja.git\"\n\033[0m\n위 명령을 통해 이 프로그램을 받으신 분들께,\ngit을 통해 이 프로그램을 받으시게 되면, 하위 디렉토리 `./data` 항목에 있는 모든 텍스트들의\n맨 끝 줄에 공백이 추가되어 모든 코드가 고장나게 됩니다.\n이렇게 되면 일일히 다 수정해야하는 불상사가 생깁니다.\n꼭 수정을 하고싶으신 경우에는 notepad.exe, kate, vim, nvim, emacs, nano 기타등등.. 의 에디터로는\n공백을 지워도 계속 롤백되기 때문에 반드시 vscode, vs20XX으로 수정하여주시기 바랍니다.")
-    print("\n\033[1m네, 확인했습니다. [엔터]\033[0m")
-    var = getkey()
-    if var == keys.ENTER:
-        clearThing()
-        print("\033[34m\n- - ~\033[36m ~ = =\033[0m 주 의 사 항  2\033[36m = = ~\033[34m ~ - -\n\033[0m\nGNU/Linux DE: KDE(WM : KWIN), Wayland, fcitx입력기 환경에서\nbackspace 입력시 글자가 잘리는 현상이 발견되었습니다.\n이 환경에 해당하시는 분이라면 불편을 감수하고 사용바랍니다.\nQtDesigner 이용한 GUI 버전 개발중이니 그때까지만 참아주세요 ㅠ")
-        print("\n\033[1m네, 확인했습니다. [엔터]\033[0m")
-        var = getkey()
-        if var == keys.ENTER:
-            clearThing()
-            home()
-        else:
-            print("엔터를 입력하지 않았습니다!")
-            exit()
-    else:
-        print("엔터를 입력하지 않았습니다!")
-        exit()
-alert()
