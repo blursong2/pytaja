@@ -31,10 +31,8 @@ def bubue(wordList):
     wronG = []
 
     for q in tqdm(wordList, desc="완료율 "):
-        # 문장 출력
         print("\n> "+q)
 
-        # 입력 및 시간 측정
         startTime = time.time()
         userInput = prompt("> ").strip()
         duration = time.time() - startTime
@@ -42,7 +40,6 @@ def bubue(wordList):
         src = hgtk.text.decompose(q).replace("ᴥ", "")
         tar = hgtk.text.decompose(userInput).replace("ᴥ", "")
 
-        # 공백을 포함한 모든 문자에 대해 안전하게 비교
         correct = sum(
             1 for a, b in zip(src, tar) if a == b
         )
@@ -91,7 +88,6 @@ def bubue(wordList):
 
 def core(filePath):
     clearThing()
-    # 기본자리
     wordList = d1(filePath)
     random.shuffle(wordList)
     bubue(wordList)
